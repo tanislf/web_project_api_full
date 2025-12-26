@@ -1,0 +1,464 @@
+.popup {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.popup__container {
+  position: relative;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 430px;
+  height: 330px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.popup__container-title {
+  position: absolute;
+  top: 35px;
+  font-family: Inter-Black;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 100%;
+  margin: 0;
+  width: 358px;
+}
+
+.popup__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 358px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.popup__form-input {
+  width: 358px;
+  gap: 27px;
+  border-style: none;
+}
+
+.popup__form-fieldset {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0;
+  width: 358px;
+  gap: 27px;
+  font-family: Inter-Regular;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  border-style: none;
+}
+
+.popup__form-fieldset_name {
+  height: 27px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.popup__form-fieldset_name:invalid {
+  border-bottom-color: red;
+}
+
+.popup__form-error-name {
+  position: absolute;
+  bottom: 170px;
+  font-family: Inter-Regular;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  margin: 0;
+  padding: 0;
+  color: red;
+  width: 358px;
+}
+
+.popup__form-error-info {
+  position: absolute;
+  bottom: 100px;
+  font-family: Inter-Regular;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  margin: 0;
+  padding: 0;
+  color: red;
+  width: 358px;
+}
+
+.popup__form-fieldset_info {
+  height: 27px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.popup__form-fieldset_info:invalid {
+  border-bottom-color: red;
+}
+
+.popup__form-close-button {
+  background: transparent url(../images/close-icon.png) no-repeat center;
+  border: none;
+  position: absolute;
+  bottom: 330px;
+  left: 430px;
+  width: 45px;
+  height: 45px;
+}
+
+.popup__form-close-button:hover {
+  cursor: pointer;
+  opacity: 60%;
+}
+
+.popup__form-close-button_grid {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  right: -45px;
+  top: -45px;
+}
+
+.popup__form-button {
+  color: #c4c4c4;
+  position: absolute;
+  bottom: 35px;
+  width: 358px;
+  height: 50px;
+  font-family: Inter-Regular;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  text-align: center;
+  border-style: none;
+  border-radius: 2px;
+  background-color: black;
+  border: 1px solid #c4c4c4;
+  cursor: pointer;
+}
+
+.popup__form-button:hover {
+  opacity: 80%;
+  background: #000000;
+}
+
+.popup__form-button_disable {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+.popup__form-button_disable:hover {
+  background-color: gray;
+}
+
+.popup-image__content {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+}
+
+.popup-image__content-container {
+  display: flex;
+  position: relative;
+  align-self: center;
+}
+
+.popup-image__image {
+  max-height: 75vh;
+  max-width: 75vw;
+}
+
+.popup-image__image-title {
+  font-family: Inter-Regular;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  color: white;
+  margin: 0;
+}
+
+.popup-image__close-button {
+  background: transparent url(../images/close-icon.png) no-repeat center;
+  border: none;
+  position: relative;
+  height: 40px;
+  width: 40px;
+}
+
+.popup-image__close-button:hover {
+  cursor: pointer;
+  opacity: 60%;
+}
+
+.popup-card {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.popup-card__container {
+  position: relative;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 430px;
+  height: 330px;
+  border-radius: 10px;
+}
+
+.popup-card__container-title {
+  position: absolute;
+  top: 35px;
+  font-family: Inter-Black;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 100%;
+  margin: 0;
+  width: 358px;
+}
+
+.popup-card__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 358px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.popup-card__form-fieldset {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 358px;
+  gap: 27px;
+  font-family: Inter-Regular;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  border-style: none;
+}
+
+.popup-card__form-fieldset_name {
+  height: 27px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.popup-card__form-fieldset_name:invalid {
+  border-bottom-color: red;
+}
+
+.popup-card__form-fieldset_info {
+  height: 27px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.popup-card__form-fieldset_info:invalid {
+  border-bottom-color: red;
+}
+
+.popup-trash {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.popup-trash__container {
+  position: relative;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 430px;
+  height: 181px;
+  border-radius: 10px;
+}
+
+.popup-trash__close-button {
+  position: absolute;
+  bottom: 200px;
+  left: 430px;
+}
+
+.popup-trash__container-title {
+  position: absolute;
+  top: 35px;
+  font-family: Inter-Black;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 100%;
+  margin: 0;
+  width: 358px;
+}
+
+.popup-trash__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.popup-trash__button {
+  color: #c4c4c4;
+  position: absolute;
+  bottom: 35px;
+  width: 358px;
+  height: 50px;
+  font-family: Inter-Regular;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  text-align: center;
+  border-style: none;
+  border-radius: 2px;
+  background-color: black;
+  border: 1px solid #c4c4c4;
+  cursor: pointer;
+}
+
+.popup-trash__button:hover {
+  opacity: 80%;
+  background: #000000;
+}
+
+.popup-trash__button_disable {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+.popup-trash__button_disable:hover {
+  background-color: gray;
+}
+
+.popup-profile {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.popup-profile__container {
+  position: relative;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 430px;
+  height: 272px;
+  border-radius: 10px;
+}
+
+.popup-profile__container-title {
+  position: absolute;
+  top: 35px;
+  font-family: Inter-Black;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 100%;
+  margin: 0;
+  width: 358px;
+}
+
+.popup-profile__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 358px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.popup-profile__form-fieldset {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 358px;
+  gap: 27px;
+  font-family: Inter-Regular;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  border-style: none;
+}
+
+.popup-profile__form-fieldset_name {
+  height: 27px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.popup-profile__form-fieldset_name:invalid {
+  border-bottom-color: red;
+}
+
+.popup-profile__button {
+  color: #c4c4c4;
+  position: absolute;
+  bottom: 35px;
+  width: 358px;
+  height: 50px;
+  font-family: Inter-Regular;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  text-align: center;
+  border-style: none;
+  border-radius: 2px;
+  background-color: black;
+  border: 1px solid #c4c4c4;
+  cursor: pointer;
+}
+
+.popup-profile__button:hover {
+  opacity: 80%;
+  background: #000000;
+}
+
+.popup-profile__button_disable {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+.popup-profile__button_disable:hover {
+  background-color: gray;
+}

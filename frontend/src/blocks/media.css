@@ -1,0 +1,351 @@
+@media screen and (max-width: 700px) {
+  .header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 0 40px 0;
+  }
+
+  .header__logo {
+    width: 126px;
+    height: 24px;
+  }
+
+  .header__useremail {
+    padding-right: 0;
+  }
+
+  .header__options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 0;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .header__options.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .header__logo-container {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    width: 320px;
+    padding-top: 20px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .header__logo-container.open {
+    padding-top: 90px;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .header__close-button {
+    display: flex !important;
+    flex-direction: column;
+    margin: 15px;
+  }
+
+  .header__close-button span {
+    width: 30px;
+    height: 4px;
+    background: white;
+    margin-bottom: 5px;
+    border-radius: 2px;
+    transform-origin: 5px 0px;
+    transition: all 0.2s linear;
+  }
+
+  .header__close-button.open > span {
+    transform: rotate(45deg) translate(0px, 0px);
+  }
+
+  .header__close-button.open > span:nth-child(2) {
+    display: none;
+  }
+
+  .header__close-button.open > span:nth-child(3) {
+    transform: rotate(-45deg) translate(-5px, 1px);
+  }
+
+  .page__content {
+    overflow-x: hidden;
+  }
+
+  .profile {
+    width: 282px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .profile__info {
+    display: flex;
+    justify-content: center;
+    width: 282px;
+    height: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin: 30px 0 30px;
+  }
+
+  .profile__info-name {
+    font-family: Inter-Regular;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 100%;
+    text-align: center;
+  }
+
+  .profile__info-description {
+    font-family: Inter-Regular;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    text-align: center;
+  }
+
+  .profile__info-edit-button {
+    margin-left: 20px;
+    margin-top: 0;
+  }
+
+  .profile__add-button {
+    width: 150px;
+    height: 50px;
+    position: static;
+  }
+
+  .content__grid {
+    width: 282px;
+    height: 2266px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, auto);
+    padding: 50px 0px;
+  }
+
+  .popup__container {
+    position: absolute;
+    top: 120px;
+    width: 282px;
+    height: 322px;
+  }
+
+  .popup__container-title {
+    width: 238px;
+  }
+
+  .popup__form {
+    width: 238px;
+  }
+
+  .popup__form-fieldset {
+    width: 238px;
+  }
+
+  .popup__form-fieldset_name {
+    width: 238px;
+  }
+
+  .popup__form-fieldset_info {
+    width: 238px;
+  }
+
+  .popup__form-close-button {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    bottom: 340px;
+    left: 255px;
+  }
+
+  .popup-image__close-button {
+    background: transparent url(../images/close-icon.png) no-repeat center;
+    border: none;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    bottom: 0px;
+  }
+
+  .popup__form-button {
+    width: 238px;
+    height: 46px;
+  }
+
+  .popup-card__container {
+    position: absolute;
+    top: 120px;
+    width: 282px;
+    height: 322px;
+  }
+
+  .popup-card__container-title {
+    width: 238px;
+  }
+
+  .popup-card__form {
+    width: 238px;
+  }
+
+  .popup-card__form-fieldset {
+    width: 238px;
+  }
+  .popup-card__form-fieldset_name {
+    width: 238px;
+  }
+
+  .popup-card__form-fieldset_info {
+    width: 238px;
+  }
+
+  .popup-card__form-button {
+    width: 238px;
+    height: 46px;
+  }
+
+  .popup-trash__container {
+    position: absolute;
+    top: 400px;
+    width: 282px;
+    height: 181px;
+  }
+
+  .popup-trash__container-title {
+    width: 282px;
+    margin-left: 40px;
+  }
+
+  .popup-trash__close-button {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    bottom: 190px;
+    left: 255px;
+  }
+
+  .popup-trash__button {
+    width: 238px;
+    height: 46px;
+  }
+
+  .popup-profile__container {
+    position: absolute;
+    top: 400px;
+    width: 282px;
+    height: 322px;
+  }
+
+  .popup-profile__form {
+    width: 238px;
+  }
+
+  .popup-profile__container-title {
+    width: 282px;
+    left: 10px;
+  }
+
+  .popup-profile__close-button {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    bottom: 330px;
+    left: 255px;
+  }
+
+  .popup-profile__button {
+    width: 238px;
+    height: 46px;
+    left: 20px;
+  }
+
+  .popup-profile__form-fieldset {
+    width: 238px;
+    right: 20px;
+  }
+
+  .popup-profile__form-fieldset_name {
+    width: 238px;
+  }
+
+  .content__grid-card-image-close-button {
+    width: 26px;
+    height: 26px;
+  }
+  .content__grid-card-image-container {
+    position: absolute;
+    top: 200px;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .content__grid-card-image-title {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+  }
+
+  .login__header {
+    max-width: 320px;
+  }
+
+  .login__logo {
+    max-width: 126px;
+    max-height: 24px;
+  }
+
+  .login__title {
+    font-size: 20px;
+    color: blue;
+  }
+
+  .login__input {
+    max-width: 260px;
+    max-height: 27px;
+  }
+
+  .login__button {
+    max-width: 260px;
+    max-height: 46px;
+  }
+
+  .register__header {
+    max-width: 320px;
+  }
+
+  .login__logo {
+    max-width: 126px;
+    max-height: 24px;
+  }
+
+  .register__title {
+    font-size: 20px;
+  }
+
+  .register__input {
+    max-width: 260px;
+    max-height: 27px;
+  }
+
+  .register__button {
+    max-width: 260px;
+    max-height: 46px;
+  }
+}

@@ -1,0 +1,56 @@
+.header__container {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  width: 880px;
+  height: 74px;
+  padding-top: 45px;
+}
+
+.header__logo {
+  width: 173px;
+  height: 33px;
+  left: 0px;
+}
+.header__options {
+  display: flex;
+  justify-content: center;
+  transform: translateY(10%);
+  transition: 0.5s ease all;
+}
+
+.header__useremail {
+  width: 100%;
+  height: 22px;
+  font-family: Inter-Regular;
+  font-weight: 500;
+  font-size: 18px;
+  color: white;
+  margin: 0;
+  padding-right: 15px;
+}
+
+.header__close-session {
+  width: 100%;
+  height: 44px;
+  font-family: Inter-Regular;
+  font-weight: 500;
+  font-size: 18px;
+  color: white;
+  margin: 0;
+  text-decoration: none;
+}
+
+.header__close-session:hover {
+  color: #a9a9a9;
+}
+
+.header__close-button {
+  display: none;
+}

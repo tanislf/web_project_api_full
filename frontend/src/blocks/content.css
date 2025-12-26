@@ -1,0 +1,97 @@
+.content__grid {
+  width: 880px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(2, auto);
+  padding-top: 30px;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+.content__grid-card {
+  width: 282px;
+}
+
+.content__grid-item {
+  width: 282px;
+  height: 282px;
+  margin: 0;
+}
+
+.content__grid-image {
+  width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  margin: 0 auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.content__grid-image:hover {
+  cursor: pointer;
+}
+
+.content__grid-description {
+  background-color: white;
+  margin: 0 auto;
+  padding: 0 15px;
+  height: 79px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.content__grid-description-text {
+  font-family: Inter-Black;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 100%;
+  color: black;
+  margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.content__grid-description-like {
+  height: 19px;
+  width: 21px;
+  background: transparent url("../images/like.svg") center no-repeat;
+  background-size: 19px 21px;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.content__grid-description-like_is-active {
+  background: transparent url("../images/likeblack.svg") center no-repeat;
+  /* background: red center no-repeat; */
+  padding: 0;
+  margin: 0;
+}
+
+.content__grid-description-trash {
+  position: relative;
+  bottom: 270px;
+  left: 250px;
+  height: 19px;
+  width: 18px;
+  background: transparent url("../images/Trash.svg") no-repeat;
+  background-size: 18px 19px;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.content__grid-description-trash:hover {
+  opacity: 60%;
+  cursor: pointer;
+}
+.content__grid-description-like:hover {
+  opacity: 60%;
+  cursor: pointer;
+}
