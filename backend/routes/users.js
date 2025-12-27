@@ -6,6 +6,12 @@ import {
   updateUser,
   updateAvatarUser,
 } from "../controllers/users.js";
+import { celebrate, Joi, Segments } from "celebrate";
+import {
+  userIdSchema,
+  updateProfileSchema,
+  updateAvatarSchema,
+} from "../middlewares/userJoi.js";
 
 const router = express.Router();
 
@@ -16,12 +22,12 @@ router.get("/", getUser);
 router.get("/me", getCurrentUser);
 
 //Obtener usuarios por id
-router.get("/:id", getUserById);
+router.get("/:id", celebrate(userIdSchema), getUserById);
 
 //Actualizar el perfil
-router.patch("/me/profile", updateUser);
+router.patch("/me/profile", celebrate(updateProfileSchema), updateUser);
 
 //Actualizar el avatar
-router.patch("/me/avatar", updateAvatarUser);
+router.patch("/me/avatar", celebrate(updateAvatarSchema), updateAvatarUser);
 
 export default router;

@@ -1,10 +1,11 @@
 import jwt from "jsonwebtoken";
+import UnauthorizedError from "./unauthorizedError.js";
 
 export default function auth(req, res, next) {
   const { authorization } = req.headers;
 
   if (!authorization || !authorization.startsWith("Bearer")) {
-    return res.status(403).json({ message: "Autorización requerida" });
+    return next(new UnauthorizedError("Autorización requerida"));
   }
 
   const token = authorization.replace("Bearer ", "");
@@ -16,11 +17,11 @@ export default function auth(req, res, next) {
   } catch (err) {
     console.log(err);
     if (err.name === "TokenExpiredError") {
-      return res.status(401).json({ message: "Token expirado" });
+      return next(new UnauthorizedError("Token expirado"));
     }
     if (err.name === "JsonWebTokenError") {
-      return res.status(401).json({ message: "Token malformado" });
+      return next(new UnauthorizedError("Token inválido"));
     }
-    return res.status(401).json({ message: "Token inválido" });
+    return next(new UnauthorizedError("Error de autorización"));
   }
 }

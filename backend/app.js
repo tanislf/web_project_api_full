@@ -6,6 +6,8 @@ import mongoose from "mongoose";
 import { createUser, login } from "./controllers/users.js";
 import auth from "./middlewares/auth.js";
 import cors from "cors";
+import { errors } from "celebrate";
+import errorHandler from "./middlewares/errorHandler.js";
 
 const app = express();
 const PORT = 3000;
@@ -33,6 +35,12 @@ mongoose
   .connect("mongodb://localhost:27017/aroundb")
   .then(() => console.log("Conectado a MongoDB"))
   .catch((err) => console.error("Error al conectar:", err));
+
+//Controlador de errorres celebrate
+app.use(errors());
+
+//Controlador de errores centralizado
+app.use(errorHandler);
 
 //encender el servidor
 app.listen(PORT, () =>
