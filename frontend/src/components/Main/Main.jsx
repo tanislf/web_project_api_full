@@ -10,6 +10,7 @@ export default function Main(props) {
     onCardLike,
     onEditProfile,
     onEditAvatar,
+    onOpenImage,
   } = props;
   const { currentUser } = useContext(CurrentUserContext);
 
@@ -51,6 +52,7 @@ export default function Main(props) {
             card={card}
             onRemoveCard={onRemoveCard}
             onCardLike={onCardLike}
+            onOpenImage={onOpenImage}
           />
         ))}
       </ul>

@@ -19,6 +19,7 @@ import EditProfile from "../components/Main/components/Popup/EditProfile/EditPro
 import EditAvatar from "../components/Main/components/Popup/Avatar/EditAvatar.jsx";
 import NewCard from "../components/Main/components/Popup/NewCard/NewCard.jsx";
 import RemoveCard from "../components/Main/components/Popup/RemoveCard/RemoveCard.jsx";
+import ImagePopup from "./Main/components/Popup/ImagePopup/ImagePopup.jsx";
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});
@@ -107,7 +108,7 @@ function App() {
   };
 
   //Popups
-  const openPopup = (popupName) => setPopup(popupName);
+  const openPopup = (popupData) => setPopup(popupData);
   const closePopup = () => setPopup(null);
 
   // Añadir una nueva tarjeta
@@ -144,11 +145,11 @@ function App() {
   const handleCardLike = async (card) => {
     try {
       const isLiked = card.likes.some(
-        (id) => id.toString() === currentUser._id
+        (id) => id.toString() === currentUser._id,
       );
       await api.likeCardStatus(card._id, isLiked).then((updatedCard) => {
         setCards((state) =>
-          state.map((c) => (c._id === card._id ? updatedCard : c))
+          state.map((c) => (c._id === card._id ? updatedCard : c)),
         );
       });
       // .catch((error) => console.error("Error al actualizar like:", error));
@@ -165,6 +166,14 @@ function App() {
     } catch (err) {
       console.error(err);
     }
+  };
+
+  //Abrir imagen grande
+  const handleOpenImagePopup = (card) => {
+    setPopup({
+      name: "image",
+      card,
+    });
   };
 
   // popups de formularios
@@ -184,6 +193,10 @@ function App() {
     removeCard: {
       title: "¿Estás seguro/a?",
       children: <RemoveCard onClose={closePopup} />,
+    },
+    image: {
+      title: null,
+      children: popup?.card && <ImagePopup card={popup.card} />,
     },
   };
 
@@ -218,6 +231,7 @@ function App() {
                     onEditAvatar={() => openPopup("editAvatar")}
                     onRemoveCard={handleRemoveCard}
                     onCardLike={handleCardLike}
+                    onOpenImage={handleOpenImagePopup}
                   />
 
                   <Footer />
@@ -254,8 +268,11 @@ function App() {
         />
 
         {popup && (
-          <Popup onClose={closePopup} title={popups[popup].title}>
-            {popups[popup].children}
+          <Popup
+            onClose={closePopup}
+            title={popups[popup.name || popup]?.title}
+          >
+            {popups[popup.name || popup]?.children}
           </Popup>
         )}
       </CurrentUserContext.Provider>

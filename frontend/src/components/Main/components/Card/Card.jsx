@@ -1,8 +1,7 @@
 import { useContext } from "react";
-import ImagePopup from "../Popup/ImagePopup/ImagePopup";
 import CurrentUserContext from "../../../../contexts/CurrentUserContext";
 
-export default function Card({ card, onRemoveCard, onOpenPopup, onCardLike }) {
+export default function Card({ card, onRemoveCard, onOpenImage, onCardLike }) {
   const { name, link, likes } = card;
   const { currentUser } = useContext(CurrentUserContext);
 
@@ -13,7 +12,7 @@ export default function Card({ card, onRemoveCard, onOpenPopup, onCardLike }) {
   }`;
 
   const handleImageClick = () => {
-    onOpenPopup({ children: <ImagePopup card={card} /> });
+    onOpenImage(card);
   };
 
   const handleLikeClick = () => {
