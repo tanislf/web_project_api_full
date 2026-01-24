@@ -85,7 +85,7 @@ class Api {
 
 //instancia para llamar a las apis
 const api = new Api({
-  baseUrl: "http://api.tanisaround.jumpingcrab.com",
+  baseUrl: "https://api.tanisaround.jumpingcrab.com",
 });
 
 export default api;
