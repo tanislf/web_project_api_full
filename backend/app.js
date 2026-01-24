@@ -13,11 +13,13 @@ const app = express();
 const PORT = 3000;
 
 //Lista de orígenes permitidos
-const allowedCros = [
+const allowedCors = [
   "https://tripleten.tk",
   "http://tripleten.tk",
   "http://localhost:3000",
   "http://localhost:3001",
+  "https://tanisaround.jumpingcrab.com",
+  "https://www.tanisaround.jumpingcrab.com",
 ];
 
 //Middleware CORS personalizado
@@ -25,7 +27,7 @@ app.use(function (req, res, next) {
   const { origin } = req.headers;
 
   // Verificar si el origen está en la lista permitida
-  if (allowedCros.includes(origin)) {
+  if (allowedCors.includes(origin)) {
     res.header("Access-Control-Allow-Origin", origin);
   }
 
