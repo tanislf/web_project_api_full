@@ -66,7 +66,7 @@ const Register = ({ handleRegistration }) => {
 
           <div className="register__button-container">
             <button className="register__button" type="submit">
-              Registrarse
+              Registrarse pruebaaa
             </button>
           </div>
         </form>
