@@ -5,6 +5,7 @@ import cardsRoutes from "./routes/cards.js";
 import mongoose from "mongoose";
 import { createUser, login } from "./controllers/users.js";
 import auth from "./middlewares/auth.js";
+import cors from "cors";
 
 import { errors } from "celebrate";
 import errorHandler from "./middlewares/errorHandler.js";
@@ -13,41 +14,26 @@ const app = express();
 const PORT = 3000;
 
 //Lista de orígenes permitidos
-const allowedCors = [
-  "https://tripleten.tk",
-  "http://tripleten.tk",
-  "http://localhost:3000",
-  "http://localhost:3001",
-  "https://tanisaround.jumpingcrab.com",
-  "https://www.tanisaround.jumpingcrab.com",
-];
+// const allowedCors = [
+//   "https://tripleten.tk",
+//   "http://tripleten.tk",
+//   "http://localhost:3000",
+//   "http://localhost:3001",
+//   "http://localhost:3002",
+//   "https://tanisaround.jumpingcrab.com",
+//   "https://www.tanisaround.jumpingcrab.com",
+// ];
 
-//Middleware CORS personalizado
-app.use(function (req, res, next) {
-  const { origin } = req.headers;
+// app.use(
+//   cors({
+//     origin: allowedCors,
+//     credentials: true,
+//     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+//     allowedHeaders: ["Content-Type", "Authorization"],
+//   }),
+// );
 
-  // Verificar si el origen está en la lista permitida
-  if (allowedCors.includes(origin)) {
-    res.header("Access-Control-Allow-Origin", origin);
-  }
-
-  // Permitir estos métodos HTTP
-  res.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE");
-  // Permitir estos encabezados
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization",
-  );
-
-  // Manejar solicitudes preflight OPTIONS
-  if (req.method === "OPTIONS") {
-    res.sendStatus(200);
-    return;
-  }
-
-  next();
-});
-
+app.use(cors());
 //Middleware para que express pueda leer JSON en las peticiones
 app.use(express.json());
 
